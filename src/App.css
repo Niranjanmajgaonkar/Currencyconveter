@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+.div2 {
+  background-color: white;
+  height: 45vh;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.one, .two, .three {
+  /* Remove position: absolute */
+   /* Add some color for visibility */
+  width: 50px;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.one input {
+  padding: 10px;
+}
+.two select ,.three select{
+  padding :10px 5vw 10px 5vw;
+}
+
+.one label ,.two label ,.three label{
+  background-color: white;
+ margin-top: -4vh;
+  margin-bottom: 1vh;
+}
+
+.one{
+  margin-left: 10vw;
+}
+.two{
+
+}
+.three{
+  margin-right: 10vw;
+}
+.div1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+}
+.title {
+  position: absolute; /* Allow precise positioning */
+  top: 15px; /* Adjust the vertical position */
+  left: 30px; /* Adjust the horizontal position */
+  background-color: whitesmoke; /* Ensure no extra background */
+  font-size: 1.5 rem; /* Adjust font size */
+  font-weight: bold; /* Make it visually prominent */
+  color: black; /* Choose an appropriate color */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+}
+.title h1{
+  background-color: white;
+}
+.title i{
+  font-weight: 900;
+  background-color: white;
+  font-size: 31px;
+  margin-top: 7px;
+  margin-right: 9px;
+  
+}
+
+.result{
+  position: absolute;
+top: 35vh;
+left: 3vw;
+}
+
+.live{
+  position: absolute;
+  top:20px;
+  left: 53vw;
+background-color: white;
+  display: flex;
+  flex-direction: row;
+}
+.live h2{
+  
+  background-color: white;
+color: red;
+}
+.live p{
+  height: 10px;
+  width: 11px;
+  background-color: red;
+  border-radius: 100px;
+  margin: 12px 6px 5px 9px;
+}
+
+.live p{
+  animation-name: blink;
+animation-duration:0.5s;
+animation-iteration-count: infinite;
+}
+
+@keyframes blink{
+  0%{
+background-color: red;
+  }
+
+  50%{
+    background-color: white;
+  }
+  
+}
+.result {
+  width: 100%; /* Ensure the container spans full width */
+  max-width: 600px; /* Set a maximum width for the container */
+  height: auto; /* Allow the height to adjust dynamically */
+  padding: 10px; /* Add some padding for better appearance */
+  border: 1px solid #ccc; /* Optional: Add a border */
+  border-radius: 5px; /* Optional: Rounded corners */
+  background-color: #f9f9f9; /* Optional: Background color */
+  text-align: center; /* Center align the text */
+  overflow: hidden; /* Hide any overflowing content */
+}
+
+.result h2 {
+  width: 100%; /* Ensure the heading spans full width */
+  max-width: 100%; /* Prevent the heading from exceeding the container width */
+  white-space: nowrap; /* Prevent text from wrapping to the next line */
+  overflow: hidden; /* Hide any overflow text */
+  text-overflow: ellipsis; /* Add ellipsis (...) to indicate overflow */
+}
