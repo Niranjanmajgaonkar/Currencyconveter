@@ -32,6 +32,7 @@ function App() {
         break;
     }
   };
+  
 useEffect(()=>{
   const retrive =async()=>{
     return await fetch(data);    
@@ -67,14 +68,19 @@ const rate = async()=>{
 
       <div className="div1">
         <div className="div2">
+          <div className="maintop">
+
           <div className="title">
-          <i class="fa-solid fa-globe"></i>
+            <i class="fa-solid fa-globe"></i>
             <h1>Currency Converter</h1>
           </div>
           <div className="live">
             <h2>Live </h2>
             <p></p>
           </div>
+          </div>
+          <div className="allthree">
+
           <div className="one">
             <label htmlFor="amount">Amount</label>
             <input type="number" value={amount} onChange={setprice} name="amount" />
@@ -95,13 +101,14 @@ const rate = async()=>{
             <select name="To" id="To" onChange={setprice}>
             <option value={to}>{to}</option>
             {
-             keys.map((key) => (
+              keys.map((key) => (
                <option key={key} value={key}>{key}</option>
              ))
             }
 
             </select>
           </div>
+            </div>
           <div className="result">
 
           <h2>{amount} {from} = {result?result.toFixed(2):0} {to}</h2>

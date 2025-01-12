@@ -1,144 +1,208 @@
-* {
-  padding: 0;
+/* Mobile Responsive CSS for Currency Converter */
+
+/* Ensure the layout adapts to small screens */
+body, html {
   margin: 0;
-  background-color: whitesmoke;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
-.div2 {
-  background-color: white;
-  height: 45vh;
-  width: 60vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-.one, .two, .three {
-  /* Remove position: absolute */
-   /* Add some color for visibility */
-  width: 50px;
-  background-color: white;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.one input {
-  padding: 10px;
-}
-.two select ,.three select{
-  padding :10px 5vw 10px 5vw;
-}
-
-.one label ,.two label ,.three label{
-  background-color: white;
- margin-top: -4vh;
-  margin-bottom: 1vh;
-}
-
-.one{
-  margin-left: 10vw;
-}
-.two{
-
-}
-.three{
-  margin-right: 10vw;
-}
+/* Outer container */
 .div1 {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  width: 100vw;
-  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
 }
+
+/* Inner container for styling */
+.div2 {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+
+  max-width: 800px;
+}
+
+/* Title styling */
 .title {
-  position: absolute; /* Allow precise positioning */
-  top: 15px; /* Adjust the vertical position */
-  left: 30px; /* Adjust the horizontal position */
-  background-color: whitesmoke; /* Ensure no extra background */
-  font-size: 1.5 rem; /* Adjust font size */
-  font-weight: bold; /* Make it visually prominent */
-  color: black; /* Choose an appropriate color */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: white;
-}
-.title h1{
-  background-color: white;
-}
-.title i{
-  font-weight: 900;
-  background-color: white;
-  font-size: 31px;
-  margin-top: 7px;
-  margin-right: 9px;
-  
-}
-
-.result{
-  position: absolute;
-top: 35vh;
-left: 3vw;
-}
-
-.live{
-  position: absolute;
-  top:20px;
-  left: 53vw;
-background-color: white;
-  display: flex;
+  text-align: center;
+  /* justify-content: center; */
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex
+;
   flex-direction: row;
 }
-.live h2{
+
+.title h1 {
+  font-size: 1.8rem;
+  color: #333333;
+}
+
+.title i {
+  color: #007bff;
+  font-size: 1.5rem;
+  margin-top: -9px;
+  margin-right: 8px;
+}
+
+/* Live section */
+.live {
+  text-align: center;
+  display: flex
+;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.live h2 {
+  font-size: 1.5rem;
+  color: red;
+}
+
+.live p {
+        /* font-size: 0.9rem; */
+    /* color: #6c757d; */
+    background-color: red;
+    height: 7px;
+    margin-top: 17px;
+    margin-left: 7px;
+    width: 7px;
+    border-radius: 76px;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes blink {
   
-  background-color: white;
-color: red;
-}
-.live p{
-  height: 10px;
-  width: 11px;
-  background-color: red;
-  border-radius: 100px;
-  margin: 12px 6px 5px 9px;
-}
-
-.live p{
-  animation-name: blink;
-animation-duration:0.5s;
-animation-iteration-count: infinite;
-}
-
-@keyframes blink{
   0%{
 background-color: red;
-  }
-
-  50%{
-    background-color: white;
-  }
-  
 }
+50%{
+    background-color: white;
+
+  }
+}
+
+/* Input and select fields */
+.one, .two, .three {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 1rem;
+  color: #555555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Result section */
 .result {
-  width: 100%; /* Ensure the container spans full width */
-  max-width: 600px; /* Set a maximum width for the container */
-  height: auto; /* Allow the height to adjust dynamically */
-  padding: 10px; /* Add some padding for better appearance */
-  border: 1px solid #ccc; /* Optional: Add a border */
-  border-radius: 5px; /* Optional: Rounded corners */
-  background-color: #f9f9f9; /* Optional: Background color */
-  text-align: center; /* Center align the text */
-  overflow: hidden; /* Hide any overflowing content */
+  text-align: center;
+  display: flex
+;
+  margin-top: 46px;
+  /* position: absolute; */
+  /* top: 361px; */
+  /* left: 195px; */
+
 }
 
 .result h2 {
-  width: 100%; /* Ensure the heading spans full width */
-  max-width: 100%; /* Prevent the heading from exceeding the container width */
-  white-space: nowrap; /* Prevent text from wrapping to the next line */
-  overflow: hidden; /* Hide any overflow text */
-  text-overflow: ellipsis; /* Add ellipsis (...) to indicate overflow */
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-top: 20px;
+  margin-left: 27px;
+}
+
+/* Add responsive styling */
+@media (max-width: 600px) {
+  .div2 {
+    padding: 15px;
+  }
+
+  .title h1 {
+    font-size: 1.5rem;
+  }
+
+  .title i {
+    font-size: 1.2rem;
+  }
+
+  .live h2 {
+    font-size: 1.2rem;
+  }
+
+  .result h2 {
+    font-size: 1rem;
+  }
+}
+
+.allthree{
+  display: flex
+  ;
+      margin-bottom: 6vh;
+      justify-content: space-between;
+      margin-top: -1vh;
+      margin: 9px 40px 11px 35px;
+}
+@media screen and (min-width: 380px) and (max-width: 500px) {
+  .allthree {
+    display: block;
+    margin-bottom: 6vh;
+    justify-content: space-between;
+    margin-top: -1vh;
+    margin:0px;
+  
+  }
+}
+
+.maintop{
+  display: flex
+  ;
+      justify-content: space-between;
+}
+@media screen and (min-width: 0px) and (max-width: 380px) {
+  .allthree {
+    display: block;
+    margin-bottom: 6vh;
+    justify-content: space-between;
+    margin-top: -1vh;
+    margin:0px;
+  
+  }
+  .title{
+    display: block;
+    unicode-bidi: isolate;
+  }
+
+  .maintop{
+    display: block;
+    unicode-bidi: isolate;
+  }
+  .live{
+    text-align: center;
+    display: flex
+;
+    margin-bottom: -4px;
+    justify-content: center;
+    align-items: center;
+    margin-top: -26px;
+  }
 }
