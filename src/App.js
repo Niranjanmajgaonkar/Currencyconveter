@@ -9,7 +9,19 @@ function App() {
   const [to , setto] =useState("INR");
   const [keys, setKeys]=useState([]);
   const[result,setResult]=useState(5);
+  const [isOffline, setIsOffline] = useState(false);
 
+
+  // Handle online/offline events
+  useEffect(() => {
+    const handleOffline = () => {setIsOffline(true)};
+    const handleOnline = () => {setIsOffline(false)};
+
+    window.addEventListener("offline", handleOffline);
+    window.addEventListener("online", handleOnline);
+
+   
+  }, []);
   const setprice = (event) => {
 
     const { name, value } = event.target;
@@ -68,7 +80,18 @@ const rate = async()=>{
       <>
 
       <div className="div1">
-        <div className="div2">
+        
+          <div className="div2">
+        <div>
+        {isOffline && (
+         <h3 style={{ color: "red", textAlign: "center" }}>
+            You are currently offline
+          </h3>
+
+        
+      )
+        }
+      </div>
           <div className="maintop">
 
           <div className="title">
