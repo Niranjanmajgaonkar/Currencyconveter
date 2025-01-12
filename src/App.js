@@ -50,7 +50,8 @@ useEffect(()=>{
     setKeys(key);
     setRates(rates);
   });
-},[]);
+
+},[from,to]);
 
 
 const rate = async()=>{
